@@ -1,35 +1,54 @@
-<head>
-  <script type="d7d6209597c0a08f87cd90b8-text/javascript" src="image-compressor.js"></script>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="A simple JavaScript image compressor.">
+  <meta name="author" content="Chen Fengyuan">
+  <title>image-compressor</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
 </head>
-
 <body>
+  <header class="navbar navbar-light navbar-expand-md">
+    <nav class="container">
+      <a class="navbar-brand" href="./">image-compressor</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbar-collapse" role="navigation">
+        <nav class="nav navbar-nav">
+          <a class="nav-link" href="https://github.com/xkeshi/image-compressor/blob/master/README.md">Docs</a>
+          <a class="nav-link" href="https://github.com/xkeshi/image-compressor/blob/master/LICENSE">License</a>
+          <a class="nav-link" href="https://github.com/xkeshi/image-compressor" title="View the GitHub project">GitHub</a>
+          <a class="nav-link" href="https://github.com/xkeshi" title="About the author">About</a>
+        </nav>
+      </div>
+    </nav>
+  </header>
 
-  <script type="d7d6209597c0a08f87cd90b8-text/javascript">
-    document.getElementById('file').addEventListener('change', (e) => {
-      const file = e.target.files[0];
+  <div class="jumbotron rounded-0 bg-primary text-white">
+    <div class="container">
+      <h1>image-compressor <small class="h6">v1.1.4</small></h1>
+      <p class="lead">A simple JavaScript image compressor.</p>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 
-      if (!file) {
-        return;
-      }
+  <div class="container">
+    <h3>Example</h3>
+    <hr>
+    <div id="app"><div class="card bg-light mb-4"><div class="card-body"><div class="p-5 text-center">Drop image here or <input type="file" id="file" accept="image/jpeg,image/jpg,image/jpe,image/png,image/gif,image/webp,image/bmp,image/tiff"></div></div></div> <div class="row"><div class="col-lg-4 mb-4"><div class="card"><div class="card-body"><h3 class="card-title">Options</h3> <hr> <fieldset class="form-group"><div class="form-check form-check-inline"><input type="checkbox" name="checkOrientation" id="inputCheckOrientation" class="form-check-input"> <label for="inputCheckOrientation" class="form-check-label">checkOrientation</label></div></fieldset> <div class="form-group row"><label for="inputMaxWidth" class="col-sm-5 col-form-label">maxWidth</label> <div class="col-sm-7"><input type="number" name="maxWidth" id="inputMaxWidth" placeholder="Infinity" class="form-control"></div></div> <div class="form-group row"><label for="inputMaxHeight" class="col-sm-5 col-form-label">maxHeight</label> <div class="col-sm-7"><input type="number" name="maxHeight" id="inputMaxHeight" placeholder="Infinity" class="form-control"></div></div> <div class="form-group row"><label for="inputMinWidth" class="col-sm-5 col-form-label">minWidth</label> <div class="col-sm-7"><input type="number" name="minWidth" id="inputMinWidth" placeholder="0" class="form-control"></div></div> <div class="form-group row"><label for="inputMinHeight" class="col-sm-5 col-form-label">minHeight</label> <div class="col-sm-7"><input type="number" name="minHeight" id="inputMinHeight" placeholder="0" class="form-control"></div></div> <div class="form-group row"><label for="inputWidth" class="col-sm-5 col-form-label">width</label> <div class="col-sm-7"><input type="number" name="width" id="inputWidth" placeholder="undefined" class="form-control"></div></div> <div class="form-group row"><label for="inputHeight" class="col-sm-5 col-form-label">height</label> <div class="col-sm-7"><input type="number" name="height" id="inputHeight" placeholder="undefined" class="form-control"></div></div> <div class="form-group row"><label for="inputQuality" class="col-sm-5 col-form-label">quality</label> <div class="col-sm-7"><select name="quality" id="inputQuality" class="form-control"><option value="0">0</option> <option value="0.1">0.1</option> <option value="0.2">0.2</option> <option value="0.3">0.3</option> <option value="0.4">0.4</option> <option value="0.5">0.5</option> <option value="0.6">0.6</option> <option value="0.7">0.7</option> <option value="0.8">0.8</option> <option value="0.9">0.9</option> <option value="1">1</option> <option value="">NaN</option></select></div></div> <div class="form-group row"><label for="inputMimeType" class="col-sm-5 col-form-label">mimeType</label> <div class="col-sm-7"><input type="text" name="mimeType" id="inputMimeType" placeholder="auto" class="form-control"></div></div> <div class="form-group row mb-0"><label for="inputConvertSize" class="col-sm-5 col-form-label">convertSize</label> <div class="col-sm-7"><input type="number" name="convertSize" id="inputConvertSize" placeholder="5000000" class="form-control"></div></div></div></div></div> <div class="col-lg-8 mb-4"><div class="card mb-4"><div class="card-body"><h3 class="card-title">Input (original)</h3> <hr> <div class="row"><div class="col-md-4 d-flex"><div class="w-100 bg-light"></div></div> <div class="col-md-8"><dl class="row"><dt class="col-sm-5">lastModified:</dt> <dd class="col-sm-7">N/A</dd> <dt class="col-sm-5">lastModifiedDate:</dt> <dd class="col-sm-7">N/A</dd> <dt class="col-sm-5">name:</dt> <dd class="col-sm-7">N/A</dd> <dt class="col-sm-5">type:</dt> <dd class="col-sm-7">N/A</dd> <dt class="col-sm-5">size:</dt> <dd class="col-sm-7">N/A</dd></dl></div></div></div></div> <div class="card"><div class="card-body"><h3 class="card-title">Output (compressed)</h3> <hr> <div class="row"><div class="col-md-4 d-flex justify-content-center"><div class="w-100 bg-light"></div></div> <div class="col-md-8"><dl class="row"><dt class="col-sm-5">lastModified:</dt> <dd class="col-sm-7">N/A</dd> <dt class="col-sm-5">lastModifiedDate:</dt> <dd class="col-sm-7">N/A</dd> <dt class="col-sm-5">name:</dt> <dd class="col-sm-7">N/A</dd> <dt class="col-sm-5">type:</dt> <dd class="col-sm-7">N/A</dd> <dt class="col-sm-5">size:</dt> <dd class="col-sm-7">N/A
+                      <!----></dd></dl></div></div></div></div></div></div></div>
+  </div>
 
-      new ImageCompressor(file, {
-        quality: .6,
-        success(result) {
-          const formData = new FormData();
+  <footer></footer>
 
-          formData.append('file', result, result.name);
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/vue@2.5.16/dist/vue.min.js"></script>
+  <script src="js/image-compressor.js"></script>
+  <script src="js/main.js"></script>
 
-          // Send the compressed image file to server with XMLHttpRequest.
-          axios.post('/path/to/upload', formData).then(() => {
-            console.log('Upload success');
-          });
-        },
-        error(e) {
-          console.log(e.message);
-        },
-      });
-    });
-  </script>
-  <input type="file" id="file" accept="image/*">
 
-<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/2448a7bd/cloudflare-static/rocket-loader.min.js" data-cf-nonce="d7d6209597c0a08f87cd90b8-" defer=""></script></body>
+</body></html>
